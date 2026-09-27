@@ -8,7 +8,14 @@ function hasSkinToneModifier(emoji) {
   return /(?:^| )1F3F[B-F](?: |$)/i.test(emoji.codepoints);
 }
 
-const emojis = rawEmojis.filter((emoji) => emoji.category !== "People & Body" || !hasSkinToneModifier(emoji));
+const unsupportedEmojiNames = new Set([
+  "cracking face"
+]);
+
+const emojis = rawEmojis.filter((emoji) => {
+  const isDefaultPeopleEmoji = emoji.category !== "People & Body" || !hasSkinToneModifier(emoji);
+  return isDefaultPeopleEmoji && !unsupportedEmojiNames.has(emoji.name);
+});
 const categories = [...new Set(emojis.map((emoji) => emoji.category))];
 const defaultCategory = categories.includes("Smileys & Emotion") ? "Smileys & Emotion" : categories[0];
 
