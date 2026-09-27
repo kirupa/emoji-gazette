@@ -9,7 +9,7 @@ on:
       release_label:
         description: Human-readable release label
         required: false
-        default: newspaper-emoji-demo
+        default: emoji-library-demo
       promote:
         description: Promote the latest verified artifact
         required: true
@@ -53,7 +53,7 @@ jobs:
           mkdir -p "$SITE_DIR/.well-known"
           cat > "$SITE_DIR/.well-known/release.json" <<JSON
           {
-            "releaseLabel": "${{ inputs.release_label || 'newspaper-emoji-demo' }}",
+            "releaseLabel": "${{ inputs.release_label || 'emoji-library-demo' }}",
             "commit": "${{ github.sha }}",
             "environment": "production",
             "url": "$PROD_URL"

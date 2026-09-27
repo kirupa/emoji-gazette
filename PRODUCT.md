@@ -8,7 +8,7 @@ web
 
 ## Users
 
-Inferred from the brief: visitors exploring a static web-page example and browsing emoji by category in a playful, visual way.
+Inferred from the brief: visitors exploring a static web-page example and browsing emoji by category in a clear, visual way.
 
 ## Product Purpose
 
@@ -16,7 +16,7 @@ Inferred from the brief: provide a self-contained emoji browsing webpage where c
 
 ## Positioning
 
-The page treats emoji browsing like reading an 1800s newspaper, using period-inspired masthead, folio, classifieds, columns, ornaments, and ink-on-paper hierarchy rather than a modern app grid.
+The page presents emoji as a modern reference catalog with practical category filtering, neutral surfaces, and Fluent-inspired typography and color.
 
 ## Operating Context
 
@@ -28,7 +28,7 @@ Confirmed by the brief: a horizontal category navigation filters displayed emoji
 
 ## Brand Commitments
 
-Confirmed by the brief: old newspaper from the 1800s.
+Confirmed by the latest brief: serious, modern presentation with typography and color elements similar to the Fluent 2 design site, without copying Microsoft assets.
 
 ## Evidence on Hand
 
@@ -37,6 +37,6 @@ No real deployment account, production URL, analytics, or secret names were prov
 ## Product Principles
 
 - Make filtering obvious and fast without a build step.
-- Preserve the 1800s newspaper premise across layout, navigation, typography, and motion.
+- Keep the interface modern, calm, and readable across layout, navigation, typography, and motion.
 - Keep sample data explicit and easy to replace.
 - Avoid real production claims or credentials in workflow files.

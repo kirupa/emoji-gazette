@@ -3,31 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Emoji Gazette</title>
-  <meta name="description" content="An 1800s newspaper-style emoji browser with category filtering.">
+  <title>Emoji Library</title>
+  <meta name="description" content="A modern emoji browsing page with category filtering.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!--
-    THESIS: Emoji browsing becomes a Sunday broadsheet, refusing the default app-store tile grid.
-    OWN-WORLD: warm rag paper, black letterpress ink, rule lines, classifieds, engraved ornaments, cramped folio details, and wide serif hierarchy.
-    STORY: visitors scan the masthead, choose a department from the press rail, then watch the notices below recompose by category.
-    FIRST VIEWPORT: a full-width masthead crowns horizontal department buttons, and the emoji notices begin immediately below in newspaper columns.
-    FORM: brief-pinned 1800s newspaper; category filtering behaves like choosing a newspaper department while preserving modern accessibility.
+    THESIS: Emoji browsing becomes a calm design-system library, refusing novelty theming in favor of a practical reference surface.
+    OWN-WORLD: Fluent-inspired Segoe typography, neutral app surfaces, rounded tiles, restrained blue actions, and small teal/purple accent fields.
+    STORY: visitors understand the collection, choose a category, and scan a consistent grid of emoji records with practical descriptions.
+    FIRST VIEWPORT: a compact top bar, large modern heading, category tabs, status summary, and equal-size emoji tiles are visible without editorial filler.
+    FORM: serious modern reference catalog; filtering behaves like a design-system component browser while preserving static-page simplicity.
   -->
-  <main class="paper-shell">
-    <header class="masthead" aria-labelledby="page-title">
-      <div class="folio">
-        <span>Vol. CLXXXIV</span>
-        <span>Published for the Curious Public</span>
-        <span>Price: One Smile</span>
+  <main class="app-shell">
+    <header class="hero" aria-labelledby="page-title">
+      <div class="top-bar">
+        <a class="brand" href="#" aria-label="Emoji Library home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Emoji Library</span>
+        </a>
+        <p class="surface-label">Reference catalog</p>
       </div>
 
-      <h1 id="page-title">The Emoji Gazette</h1>
-      <p class="dateline">Sunday Edition · New York, September 27, 1896 · A Catalogue of Modern Pictographs</p>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Curated emoji set</p>
+          <h1 id="page-title">Browse emoji by category.</h1>
+          <p class="intro">
+            A focused reference page for scanning common emoji groups. Use the category controls to narrow the collection and keep the grid readable.
+          </p>
+        </div>
+        <aside class="hero-card" aria-label="Collection summary">
+          <span class="summary-value">30</span>
+          <span class="summary-label">sample emoji records</span>
+        </aside>
+      </div>
 
-      <nav class="press-rail" aria-label="Emoji categories">
-        <button class="category-button is-active" type="button" data-filter="all" aria-pressed="true">All Departments</button>
+      <nav class="category-nav" aria-label="Emoji categories">
+        <button class="category-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
         <button class="category-button" type="button" data-filter="Smileys &amp; People" aria-pressed="false">Smileys &amp; People</button>
         <button class="category-button" type="button" data-filter="Animals &amp; Nature" aria-pressed="false">Animals &amp; Nature</button>
         <button class="category-button" type="button" data-filter="Food &amp; Drink" aria-pressed="false">Food &amp; Drink</button>
@@ -38,10 +51,13 @@
       </nav>
     </header>
 
-    <section class="notice-board" aria-labelledby="notice-heading">
-      <div class="board-heading">
-        <h2 id="notice-heading">Today's Illustrated Notices</h2>
-        <p id="results-count" class="results-count" aria-live="polite">Showing all notices.</p>
+    <section class="catalog-section" aria-labelledby="catalog-heading">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Library</p>
+          <h2 id="catalog-heading">Emoji catalog</h2>
+        </div>
+        <p id="results-count" class="results-count" aria-live="polite">Showing all emoji.</p>
       </div>
 
       <div id="emoji-grid" class="emoji-grid" aria-live="polite"></div>

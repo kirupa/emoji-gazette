@@ -4,26 +4,26 @@
 
 ## Visual World
 
-The site is an 1800s broadsheet newspaper translated into a static emoji browser: rag-paper warmth, black letterpress ink, double rules, folio details, large compressed masthead type, cramped uppercase department labels, classified notices, and column flow. The page should feel printed, handled, and composed by a newspaper desk rather than assembled from modern web cards.
+The site is now a serious, modern emoji reference catalog inspired by Fluent 2 without copying Microsoft assets. The system uses calm white and neutral surfaces, Segoe-style typography, rounded component geometry, subtle elevation, practical reference copy, and restrained blue action states with teal, purple, and pink accent fields.
 
 ## Color
 
-Restrained ink-on-paper palette: aged paper (`#eadfbe`), deeper paper shadows (`#d9c999`), near-black ink (`#201914`), brown secondary ink (`#574534`), and pressed paper highlights (`#f5edcf`). Color is atmospheric and material, not decorative.
+Neutral app palette: foreground `#242424`, secondary text `#424242`, tertiary text `#616161`, white and off-white surfaces (`#ffffff`, `#fafafa`, `#f5f5f5`), soft neutral strokes, and Microsoft-inspired blue primary actions (`#0f6cbd`). Teal (`#49c5b1`), purple (`#8661c5`), pink (`#c03bc4`), and bright blue (`#018df8`) appear as controlled gradients and brand-mark accents.
 
 ## Typography
 
-System serif stack anchored by Georgia and Times New Roman. Hierarchy comes from oversized masthead lettering, uppercase folio/navigation labels, tight display tracking, and readable body columns.
+Use `"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif`. Headings are large, semibold, and tightly tracked; labels are small, semibold, and functional rather than ornamental.
 
 ## Components
 
-- Masthead: double newspaper rules, volume/date/price folio, dominant title.
-- Press rail: horizontal department buttons with active ink inversion.
-- Emoji notices: equal-height printed classified blocks with a department slug, oversized glyph, headline, and short dispatch.
+- Hero: compact top bar, simple brand mark, large modern headline, practical introduction, and elevated summary card.
+- Category navigation: horizontal rounded pill controls with blue active state and accessible pressed states.
+- Emoji records: equal-height rounded tiles with subtle shadow, category chip, oversized emoji, concise name, and practical usage description.
 
 ## Interaction
 
-Category buttons filter the emoji notices in place. Active state uses inverted ink; hover/focus uses pressed paper and an offset print shadow. Filtering includes an aria-live count update.
+Category buttons filter the emoji records in place. Active state uses blue fill, hover/focus uses subtle elevation and blue stroke, and the result count updates through `aria-live`.
 
 ## Responsive Rules
 
-The broadsheet narrows from four notice columns to three and then one. The masthead keeps its period scale but allows the folio and board heading to stack on small screens.
+The catalog uses four equal columns on wide screens, three on tablet widths, and one on phones. Category controls remain horizontally available on small screens without forcing narrow buttons to wrap into unreadable rows.
