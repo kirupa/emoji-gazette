@@ -5,34 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Emoji Library</title>
   <meta name="description" content="A modern emoji browsing page with category filtering.">
-  <link rel="stylesheet" href="styles.css?v=20260927-spacing">
+  <link rel="stylesheet" href="styles.css?v=20260927-controls">
 </head>
 <body>
   <!--
     THESIS: Emoji browsing becomes a calm design-system library, refusing novelty theming in favor of a practical reference surface.
     OWN-WORLD: Fluent-inspired Segoe typography, neutral app surfaces, rounded tiles, restrained blue actions, and small teal/purple accent fields.
-    STORY: visitors understand the full Unicode emoji collection, choose a category, and scan a consistent grid of emoji names.
-    FIRST VIEWPORT: a compact top bar, large modern heading, category tabs, and equal-size emoji tiles are visible without summary-card filler.
+    STORY: visitors choose a category and scan a consistent grid of emoji names without introductory copy.
+    FIRST VIEWPORT: a compact top bar, category tabs, and equal-size emoji tiles are visible without summary-card or hero-text filler.
     FORM: serious modern reference catalog; filtering behaves like a design-system component browser while preserving static-page simplicity.
   -->
   <main class="app-shell">
-    <header class="hero" aria-labelledby="page-title">
+    <header class="hero" aria-label="Emoji Library controls">
       <div class="top-bar">
         <a class="brand" href="#" aria-label="Emoji Library home">
           <span class="brand-mark" aria-hidden="true"></span>
           <span>Emoji Library</span>
         </a>
         <p class="surface-label">Reference catalog</p>
-      </div>
-
-      <div class="hero-content">
-        <div>
-          <p class="eyebrow">Unicode emoji set</p>
-          <h1 id="page-title">Browse emoji by category.</h1>
-          <p class="intro">
-            A focused reference page for scanning the full fully-qualified emoji collection. Use the category controls to narrow the set and keep the grid readable.
-          </p>
-        </div>
       </div>
 
       <nav id="category-nav" class="category-nav" aria-label="Emoji categories"></nav>
