@@ -233,8 +233,8 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 218px;
-  padding: 14px;
+  height: 180px;
+  padding: 12px;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 250, 250, 0.96)),
@@ -254,8 +254,8 @@ h1 {
   align-self: center;
   align-items: center;
   justify-content: center;
-  min-height: 28px;
-  padding: 4px 10px;
+  min-height: 24px;
+  padding: 3px 9px;
   color: var(--brand-primary);
   background: #ebf3fc;
   border-radius: 999px;
@@ -267,33 +267,31 @@ h1 {
 }
 
 .emoji-mark {
-  flex: 0 0 66px;
+  flex: 0 0 54px;
   display: grid;
   place-items: center;
-  margin: 10px 0 8px;
-  font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+  margin: 6px 0 2px;
+  font-size: clamp(2.15rem, 4vw, 3.2rem);
   line-height: 1;
   text-align: center;
   filter: saturate(0.94);
 }
 
 .notice-copy {
-  flex: 1;
+  width: 100%;
   min-height: 0;
   text-align: center;
 }
 
 .notice-copy h3 {
-  display: -webkit-box;
-  overflow: hidden;
-  margin-bottom: 6px;
+  margin-bottom: 0;
   color: var(--neutral-foreground-1);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  line-height: 1.32;
+  line-height: 1.42;
   letter-spacing: -0.01em;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .no-results {
