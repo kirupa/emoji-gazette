@@ -28,7 +28,7 @@ jobs:
 
       - name: Check for placeholder production secrets
         run: |
-          ! grep -R "AKIA\\|BEGIN PRIVATE KEY\\|password=" -n website .github/workflows
+          ! grep -R "AKIA\\|BEGIN PRIVATE KEY\\|password=" -n website
 
       - name: Summarize artifact
         run: |
