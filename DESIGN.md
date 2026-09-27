@@ -4,7 +4,7 @@
 
 ## Visual World
 
-The site is now a serious, modern emoji reference catalog inspired by Fluent 2 without copying Microsoft assets. The system uses calm white and neutral surfaces, Segoe-style typography, rounded component geometry, subtle elevation, practical Unicode metadata, and restrained blue action states with teal, purple, and pink accent fields.
+The site is now a serious, modern emoji reference catalog inspired by Fluent 2 without copying Microsoft assets. The system uses calm white and neutral surfaces, Segoe-style typography, rounded component geometry, subtle elevation, simple emoji names, and restrained blue action states with teal, purple, and pink accent fields.
 
 ## Color
 
@@ -17,8 +17,8 @@ Use `"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFo
 ## Components
 
 - Hero: compact top bar, simple brand mark, large modern headline, and practical introduction with no sample-count card.
-- Category navigation: generated horizontal rounded pill controls for every Unicode emoji group, with blue active state and accessible pressed states.
-- Emoji records: compact equal-height rounded tiles with subtle shadow, category chip, emoji, Unicode name, subgroup, version, and codepoint metadata.
+- Category navigation: generated horizontal rounded pill controls for every Unicode emoji group, with Smileys & Emotion active by default, no All tab, blue active state, and accessible pressed states.
+- Emoji records: compact equal-height rounded tiles with subtle shadow, centered category chip, emoji, and centered Unicode name.
 
 ## Interaction
 

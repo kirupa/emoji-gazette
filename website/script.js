@@ -5,16 +5,10 @@ const count = document.querySelector("#results-count");
 const template = document.querySelector("#emoji-card-template");
 
 const categories = [...new Set(emojis.map((emoji) => emoji.category))];
+const defaultCategory = categories.includes("Smileys & Emotion") ? "Smileys & Emotion" : categories[0];
 
 function formatName(name) {
   return name.charAt(0).toUpperCase() + name.slice(1);
-}
-
-function formatCodepoints(codepoints) {
-  return codepoints
-    .split(" ")
-    .map((codepoint) => `U+${codepoint}`)
-    .join(" ");
 }
 
 function createCategoryButton(label, filter, isActive = false) {
@@ -37,10 +31,9 @@ function updateActiveCategory(activeButton) {
 
 function renderCategoryNav() {
   const fragment = document.createDocumentFragment();
-  fragment.append(createCategoryButton("All", "all", true));
 
   categories.forEach((category) => {
-    fragment.append(createCategoryButton(category, category));
+    fragment.append(createCategoryButton(category, category, category === defaultCategory));
   });
 
   categoryNav.append(fragment);
@@ -53,8 +46,8 @@ function renderCategoryNav() {
   });
 }
 
-function renderEmojis(filter = "all") {
-  const visible = filter === "all" ? emojis : emojis.filter((emoji) => emoji.category === filter);
+function renderEmojis(filter = defaultCategory) {
+  const visible = emojis.filter((emoji) => emoji.category === filter);
   grid.innerHTML = "";
 
   if (visible.length === 0) {
@@ -71,17 +64,14 @@ function renderEmojis(filter = "all") {
       notice.querySelector(".notice-type").textContent = emoji.category;
       notice.querySelector(".emoji-mark").textContent = emoji.glyph;
       notice.querySelector("h3").textContent = formatName(emoji.name);
-      notice.querySelector("p").textContent = `${emoji.subgroup} · ${emoji.version} · ${formatCodepoints(emoji.codepoints)}`;
       fragment.append(notice);
     });
 
     grid.append(fragment);
   }
 
-  count.textContent = filter === "all"
-    ? `Showing all ${visible.length.toLocaleString()} emoji.`
-    : `Showing ${visible.length.toLocaleString()} emoji in ${filter}.`;
+  count.textContent = `Showing ${visible.length.toLocaleString()} emoji in ${filter}.`;
 }
 
 renderCategoryNav();
-renderEmojis();
+renderEmojis(defaultCategory);
