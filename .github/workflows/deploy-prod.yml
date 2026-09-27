@@ -1,0 +1,80 @@
+name: Deploy production website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      release_label:
+        description: Human-readable release label
+        required: false
+        default: newspaper-emoji-demo
+      promote:
+        description: Promote the latest verified artifact
+        required: true
+        default: "true"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: production-website
+  cancel-in-progress: false
+
+env:
+  SITE_DIR: website
+  PROD_URL: https://kirupa.github.io/emoji-gazette/
+  CDN_DISTRIBUTION_ID: sample-distribution-1234
+
+jobs:
+  build:
+    name: Build static artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Verify static files
+        run: |
+          test -f "$SITE_DIR/index.html"
+          test -f "$SITE_DIR/styles.css"
+          test -f "$SITE_DIR/script.js"
+
+      - name: Stamp release metadata
+        run: |
+          mkdir -p "$SITE_DIR/.well-known"
+          cat > "$SITE_DIR/.well-known/release.json" <<JSON
+          {
+            "releaseLabel": "${{ inputs.release_label || 'newspaper-emoji-demo' }}",
+            "commit": "${{ github.sha }}",
+            "environment": "production",
+            "url": "$PROD_URL"
+          }
+          JSON
+
+      - name: Upload production artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.SITE_DIR }}
+
+  deploy:
+    name: Deploy to production
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy static site
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Purge sample CDN
+        run: |
+          echo "Purging CDN distribution $CDN_DISTRIBUTION_ID for $PROD_URL"

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Emoji Gazette</title>
+  <meta name="description" content="An 1800s newspaper-style emoji browser with category filtering.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    THESIS: Emoji browsing becomes a Sunday broadsheet, refusing the default app-store tile grid.
+    OWN-WORLD: warm rag paper, black letterpress ink, rule lines, classifieds, engraved ornaments, cramped folio details, and wide serif hierarchy.
+    STORY: visitors scan the masthead, choose a department from the press rail, then watch the notices below recompose by category.
+    FIRST VIEWPORT: a full-width masthead crowns horizontal department buttons, a lead editorial introduces the collection, and the emoji notices fill newspaper columns beneath.
+    FORM: brief-pinned 1800s newspaper; category filtering behaves like choosing a newspaper department while preserving modern accessibility.
+  -->
+  <main class="paper-shell">
+    <header class="masthead" aria-labelledby="page-title">
+      <div class="folio">
+        <span>Vol. CLXXXIV</span>
+        <span>Published for the Curious Public</span>
+        <span>Price: One Smile</span>
+      </div>
+
+      <h1 id="page-title">The Emoji Gazette</h1>
+      <p class="dateline">Sunday Edition · New York, September 27, 1896 · A Catalogue of Modern Pictographs</p>
+
+      <nav class="press-rail" aria-label="Emoji categories">
+        <button class="category-button is-active" type="button" data-filter="all" aria-pressed="true">All Departments</button>
+        <button class="category-button" type="button" data-filter="Smileys &amp; People" aria-pressed="false">Smileys &amp; People</button>
+        <button class="category-button" type="button" data-filter="Animals &amp; Nature" aria-pressed="false">Animals &amp; Nature</button>
+        <button class="category-button" type="button" data-filter="Food &amp; Drink" aria-pressed="false">Food &amp; Drink</button>
+        <button class="category-button" type="button" data-filter="Travel &amp; Places" aria-pressed="false">Travel &amp; Places</button>
+        <button class="category-button" type="button" data-filter="Objects" aria-pressed="false">Objects</button>
+        <button class="category-button" type="button" data-filter="Symbols" aria-pressed="false">Symbols</button>
+        <button class="category-button" type="button" data-filter="Flags" aria-pressed="false">Flags</button>
+      </nav>
+    </header>
+
+    <section class="lead-story" aria-labelledby="lead-heading">
+      <div>
+        <p class="section-rubric">Extra! Extra!</p>
+        <h2 id="lead-heading">A grand index of faces, beasts, victuals, voyages, and signs.</h2>
+      </div>
+      <p>
+        Select any department above and the composing room will reset the column below, revealing only the emoji notices fit for that section.
+        Every specimen carries a small dispatch so the page feels more like an illustrated newspaper than a bare symbol sheet.
+      </p>
+    </section>
+
+    <section class="notice-board" aria-labelledby="notice-heading">
+      <div class="board-heading">
+        <h2 id="notice-heading">Today's Illustrated Notices</h2>
+        <p id="results-count" class="results-count" aria-live="polite">Showing all notices.</p>
+      </div>
+
+      <div id="emoji-grid" class="emoji-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <template id="emoji-card-template">
+    <article class="emoji-notice">
+      <div class="notice-type"></div>
+      <div class="emoji-mark" aria-hidden="true"></div>
+      <div class="notice-copy">
+        <h3></h3>
+        <p></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
