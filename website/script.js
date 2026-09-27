@@ -3,6 +3,13 @@ const categoryNav = document.querySelector("#category-nav");
 const grid = document.querySelector("#emoji-grid");
 const count = document.querySelector("#results-count");
 const template = document.querySelector("#emoji-card-template");
+const navToggle = document.querySelector("#nav-toggle");
+const useVerticalNav = new URLSearchParams(window.location.search).get("e") === "vert_nav";
+
+if (useVerticalNav) {
+  document.documentElement.classList.add("variant-vert-nav");
+  navToggle.hidden = false;
+}
 
 function hasSkinToneModifier(emoji) {
   return /(?:^| )1F3F[B-F](?: |$)/i.test(emoji.codepoints);
@@ -41,6 +48,19 @@ function updateActiveCategory(activeButton) {
   });
 }
 
+function closeCategoryMenu() {
+  if (!useVerticalNav) return;
+  document.documentElement.classList.remove("nav-open");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Open emoji categories");
+}
+
+function toggleCategoryMenu() {
+  const isOpen = document.documentElement.classList.toggle("nav-open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute("aria-label", isOpen ? "Close emoji categories" : "Open emoji categories");
+}
+
 function renderCategoryNav() {
   const fragment = document.createDocumentFragment();
 
@@ -55,6 +75,7 @@ function renderCategoryNav() {
 
     updateActiveCategory(button);
     renderEmojis(button.dataset.filter);
+    closeCategoryMenu();
   });
 }
 
@@ -87,3 +108,14 @@ function renderEmojis(filter = defaultCategory) {
 
 renderCategoryNav();
 renderEmojis(defaultCategory);
+
+if (useVerticalNav) {
+  navToggle.addEventListener("click", toggleCategoryMenu);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeCategoryMenu();
+      navToggle.focus();
+    }
+  });
+}
