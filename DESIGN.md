@@ -17,7 +17,7 @@ Use `"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFo
 ## Components
 
 - Header: compact top bar, simple brand mark, and category navigation with no hero headline, introduction, or sample-count card.
-- Category navigation: generated horizontal rounded pill controls for the default page. The `?e=vert_nav` variant places the hamburger to the left of the Emoji Library brand and reveals the same categories as an overlaid vertical flyout, without pushing page content down. Smileys & Emotion is active by default, there is no All tab, and controls keep accessible pressed/expanded states.
+- Category navigation: generated horizontal rounded pill controls for the default page. The `?e=vert_nav` variant uses a much slimmer top header, places the hamburger to the left of the Emoji Library brand, and reveals the same categories as a left-aligned overlaid vertical flyout without pushing page content down. Smileys & Emotion is active by default, there is no All tab, and controls keep accessible pressed/expanded states.
 - Emoji records: compact equal-height rounded tiles with subtle shadow, centered category chip, emoji, and centered Unicode name. Titles use compact normal-flow text with enough line-height for descenders, and sit about 10px below the emoji; People & Body shows only default yellow emoji by excluding skin-tone modifier variants. Known unsupported Unicode glyphs that render blank, such as Cracking face, are hidden until platform emoji fonts catch up.
 
 ## Interaction

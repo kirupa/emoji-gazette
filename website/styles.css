@@ -189,18 +189,36 @@ p {
 
 .variant-vert-nav .hero {
   overflow: visible;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.variant-vert-nav .top-bar {
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.variant-vert-nav .nav-toggle {
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.variant-vert-nav .surface-label {
+  margin-top: 0;
 }
 
 .variant-vert-nav .category-nav {
   display: none;
   position: absolute;
-  top: 64px;
-  left: clamp(18px, 4vw, 48px);
+  top: calc(100% + 8px);
+  left: 8px;
   z-index: 20;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: stretch;
-  width: min(288px, 100%);
+  width: min(288px, calc(100% - 16px));
   margin-top: 0;
   padding: 8px;
   background: rgba(255, 255, 255, 0.96);
