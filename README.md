@@ -1,6 +1,6 @@
 # Emoji Library
 
-A modern static emoji browser with horizontal category filtering and a Fluent-inspired visual style.
+A modern static emoji browser with horizontal category filtering, a Fluent-inspired visual style, and a generated full Unicode emoji dataset.
 
 ## Local preview
 

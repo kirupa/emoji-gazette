@@ -12,7 +12,7 @@ Inferred from the brief: visitors exploring a static web-page example and browsi
 
 ## Product Purpose
 
-Inferred from the brief: provide a self-contained emoji browsing webpage where category navigation filters the visible emoji collection.
+Inferred from the brief: provide a self-contained emoji browsing webpage where category navigation filters the full visible emoji collection.
 
 ## Positioning
 
@@ -24,7 +24,7 @@ The site lives as static files in `C:\apps\website`. Workflow samples live in `C
 
 ## Capabilities and Constraints
 
-Confirmed by the brief: a horizontal category navigation filters displayed emojis below. The implementation is static HTML, CSS, and JavaScript with sample emoji values.
+Confirmed by the brief: a horizontal category navigation filters displayed emojis below. The implementation is static HTML, CSS, and JavaScript with a generated fully-qualified Unicode emoji dataset.
 
 ## Brand Commitments
 
@@ -38,5 +38,5 @@ No real deployment account, production URL, analytics, or secret names were prov
 
 - Make filtering obvious and fast without a build step.
 - Keep the interface modern, calm, and readable across layout, navigation, typography, and motion.
-- Keep sample data explicit and easy to replace.
+- Keep generated emoji data explicit and easy to regenerate.
 - Avoid real production claims or credentials in workflow files.

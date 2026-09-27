@@ -4,7 +4,7 @@
 
 ## Visual World
 
-The site is now a serious, modern emoji reference catalog inspired by Fluent 2 without copying Microsoft assets. The system uses calm white and neutral surfaces, Segoe-style typography, rounded component geometry, subtle elevation, practical reference copy, and restrained blue action states with teal, purple, and pink accent fields.
+The site is now a serious, modern emoji reference catalog inspired by Fluent 2 without copying Microsoft assets. The system uses calm white and neutral surfaces, Segoe-style typography, rounded component geometry, subtle elevation, practical Unicode metadata, and restrained blue action states with teal, purple, and pink accent fields.
 
 ## Color
 
@@ -16,9 +16,9 @@ Use `"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFo
 
 ## Components
 
-- Hero: compact top bar, simple brand mark, large modern headline, practical introduction, and elevated summary card.
-- Category navigation: horizontal rounded pill controls with blue active state and accessible pressed states.
-- Emoji records: equal-height rounded tiles with subtle shadow, category chip, oversized emoji, concise name, and practical usage description.
+- Hero: compact top bar, simple brand mark, large modern headline, and practical introduction with no sample-count card.
+- Category navigation: generated horizontal rounded pill controls for every Unicode emoji group, with blue active state and accessible pressed states.
+- Emoji records: compact equal-height rounded tiles with subtle shadow, category chip, emoji, Unicode name, subgroup, version, and codepoint metadata.
 
 ## Interaction
 
@@ -26,4 +26,4 @@ Category buttons filter the emoji records in place. Active state uses blue fill,
 
 ## Responsive Rules
 
-The catalog uses four equal columns on wide screens, three on tablet widths, and one on phones. Category controls remain horizontally available on small screens without forcing narrow buttons to wrap into unreadable rows.
+The catalog uses an auto-filling equal-card grid on wide screens, denser tablet columns, and two columns on phones. Category controls remain horizontally available on small screens without forcing narrow buttons to wrap into unreadable rows.

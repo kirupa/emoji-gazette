@@ -11,8 +11,8 @@
   <!--
     THESIS: Emoji browsing becomes a calm design-system library, refusing novelty theming in favor of a practical reference surface.
     OWN-WORLD: Fluent-inspired Segoe typography, neutral app surfaces, rounded tiles, restrained blue actions, and small teal/purple accent fields.
-    STORY: visitors understand the collection, choose a category, and scan a consistent grid of emoji records with practical descriptions.
-    FIRST VIEWPORT: a compact top bar, large modern heading, category tabs, status summary, and equal-size emoji tiles are visible without editorial filler.
+    STORY: visitors understand the full Unicode emoji collection, choose a category, and scan a consistent grid of emoji records with practical metadata.
+    FIRST VIEWPORT: a compact top bar, large modern heading, category tabs, and equal-size emoji tiles are visible without summary-card filler.
     FORM: serious modern reference catalog; filtering behaves like a design-system component browser while preserving static-page simplicity.
   -->
   <main class="app-shell">
@@ -27,28 +27,15 @@
 
       <div class="hero-content">
         <div>
-          <p class="eyebrow">Curated emoji set</p>
+          <p class="eyebrow">Unicode emoji set</p>
           <h1 id="page-title">Browse emoji by category.</h1>
           <p class="intro">
-            A focused reference page for scanning common emoji groups. Use the category controls to narrow the collection and keep the grid readable.
+            A focused reference page for scanning the full fully-qualified emoji collection. Use the category controls to narrow the set and keep the grid readable.
           </p>
         </div>
-        <aside class="hero-card" aria-label="Collection summary">
-          <span class="summary-value">30</span>
-          <span class="summary-label">sample emoji records</span>
-        </aside>
       </div>
 
-      <nav class="category-nav" aria-label="Emoji categories">
-        <button class="category-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="category-button" type="button" data-filter="Smileys &amp; People" aria-pressed="false">Smileys &amp; People</button>
-        <button class="category-button" type="button" data-filter="Animals &amp; Nature" aria-pressed="false">Animals &amp; Nature</button>
-        <button class="category-button" type="button" data-filter="Food &amp; Drink" aria-pressed="false">Food &amp; Drink</button>
-        <button class="category-button" type="button" data-filter="Travel &amp; Places" aria-pressed="false">Travel &amp; Places</button>
-        <button class="category-button" type="button" data-filter="Objects" aria-pressed="false">Objects</button>
-        <button class="category-button" type="button" data-filter="Symbols" aria-pressed="false">Symbols</button>
-        <button class="category-button" type="button" data-filter="Flags" aria-pressed="false">Flags</button>
-      </nav>
+      <nav id="category-nav" class="category-nav" aria-label="Emoji categories"></nav>
     </header>
 
     <section class="catalog-section" aria-labelledby="catalog-heading">
@@ -75,6 +62,7 @@
     </article>
   </template>
 
+  <script src="emoji-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
