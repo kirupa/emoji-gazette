@@ -18,8 +18,7 @@ System serif stack anchored by Georgia and Times New Roman. Hierarchy comes from
 
 - Masthead: double newspaper rules, volume/date/price folio, dominant title.
 - Press rail: horizontal department buttons with active ink inversion.
-- Lead story: large editorial headline with two-column explanatory copy.
-- Emoji notices: printed classified blocks with a department slug, oversized glyph, headline, and short dispatch.
+- Emoji notices: equal-height printed classified blocks with a department slug, oversized glyph, headline, and short dispatch.
 
 ## Interaction
 
