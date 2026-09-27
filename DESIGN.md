@@ -18,7 +18,7 @@ Use `"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFo
 
 - Hero: compact top bar, simple brand mark, large modern headline, and practical introduction with no sample-count card.
 - Category navigation: generated horizontal rounded pill controls for every Unicode emoji group, with Smileys & Emotion active by default, no All tab, blue active state, and accessible pressed states.
-- Emoji records: compact equal-height rounded tiles with subtle shadow, centered category chip, emoji, and centered Unicode name.
+- Emoji records: compact equal-height rounded tiles with subtle shadow, centered category chip, emoji, and centered Unicode name. Card height and title line-height allow multi-line names without cropping; People & Body shows only default yellow emoji by excluding skin-tone modifier variants.
 
 ## Interaction
 

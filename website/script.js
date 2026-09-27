@@ -1,9 +1,14 @@
-const emojis = Array.isArray(window.emojiData) ? window.emojiData : [];
+const rawEmojis = Array.isArray(window.emojiData) ? window.emojiData : [];
 const categoryNav = document.querySelector("#category-nav");
 const grid = document.querySelector("#emoji-grid");
 const count = document.querySelector("#results-count");
 const template = document.querySelector("#emoji-card-template");
 
+function hasSkinToneModifier(emoji) {
+  return /(?:^| )1F3F[B-F](?: |$)/i.test(emoji.codepoints);
+}
+
+const emojis = rawEmojis.filter((emoji) => emoji.category !== "People & Body" || !hasSkinToneModifier(emoji));
 const categories = [...new Set(emojis.map((emoji) => emoji.category))];
 const defaultCategory = categories.includes("Smileys & Emotion") ? "Smileys & Emotion" : categories[0];
 
