@@ -11,3 +11,8 @@ Open `website\index.html` directly in a browser, or serve the folder with any st
 Production is deployed by `.github\workflows\deploy-prod.yml` to:
 
 https://kirupa.github.io/emoji-gazette/
+
+## URL variants
+
+- `?e=vert_nav` shows the hamburger menu variant.
+- `?e=default` redirects to a missing GitHub Pages path so the default GitHub 404 page is shown.

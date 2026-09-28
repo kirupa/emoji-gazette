@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Emoji Library</title>
   <meta name="description" content="A modern emoji browsing page with category filtering.">
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("e") !== "default") return;
+
+      const path = window.location.pathname;
+      const basePath = path.endsWith("/") ? path : path.replace(/\/[^/]*$/, "/");
+      window.location.replace(`${window.location.origin}${basePath}404`);
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css?v=20260927-vert-nav-compact">
 </head>
 <body>
   <!--
     THESIS: Emoji browsing becomes a calm design-system library, refusing novelty theming in favor of a practical reference surface.
     OWN-WORLD: Fluent-inspired Segoe typography, neutral app surfaces, rounded tiles, restrained blue actions, and small teal/purple accent fields.
-    STORY: visitors choose a category and scan a consistent grid of emoji names without introductory copy; the alternate vertical-nav variant moves categories behind a hamburger next to the brand.
+    STORY: visitors choose a category and scan a consistent grid of emoji names without introductory copy; the alternate vertical-nav variant moves categories behind a hamburger next to the brand, while ?e=default intentionally routes to the host 404.
     FIRST VIEWPORT: a compact top bar, category controls, and equal-size emoji tiles are visible without summary-card or hero-text filler.
     FORM: serious modern reference catalog; filtering behaves like a design-system component browser while preserving static-page simplicity.
   -->
